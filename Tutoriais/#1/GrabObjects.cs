@@ -3,7 +3,7 @@
 public class GrabObjects : MonoBehaviour
 {
     public string[] objectTags;
-    [Tooltip("Forte to apply in object")]
+    [Tooltip("Force to apply in object")]
     public float forceGrab = 5;
     public float maxDist;
     [Tooltip("Put all layers, the player layer not!")]
@@ -19,22 +19,19 @@ public class GrabObjects : MonoBehaviour
     void Update()
     {
         Transform cam = Camera.main.transform;
-
-
-
         RaycastHit hit = new RaycastHit();
+
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxDist, acceptLayers, QueryTriggerInteraction.Ignore))
         {
+            Debug.DrawLine(cam.position, hit.point, Color.blue);
+
             foreach (string tag in objectTags)
-            {
                 if (hit.transform.tag == tag)
                 {
                     if (Input.GetMouseButtonDown(0))
                         grabedObj = hit.transform.gameObject;
                     
                 }
-            }
-            Debug.DrawLine(cam.position, hit.point, Color.blue);
         }
 
 
@@ -42,9 +39,10 @@ public class GrabObjects : MonoBehaviour
         {
             if (!grabedObj.GetComponent<Rigidbody>())
             {
-                Debug.LogError("Your object to grab NEEDS RigidBory");
+                Debug.LogError("Your object NEED RigidBody Component! | Coloque um Rigidbody no objeto!");
                 return;
             }
+
             Rigidbody objRig = grabedObj.GetComponent<Rigidbody>();
             Vector3 posGrab = cam.position + cam.forward * maxDist;
             float dist = Vector3.Distance(grabedObj.transform.position, posGrab);
@@ -56,13 +54,7 @@ public class GrabObjects : MonoBehaviour
             objRig.angularDrag = 2.5f;
             objRig.AddForce(-(grabedObj.transform.position - posGrab).normalized * calc, ForceMode.Impulse);
 
-            if (Input.GetMouseButtonUp(0))
-                UngrabObject();
-
-            if (objRig.velocity.magnitude >= 20)
-                UngrabObject();
-
-            if (dist >= 10)
+            if (Input.GetMouseButtonUp(0) || objRig.velocity.magnitude >= 25 || dist >= 8)
                 UngrabObject();
         }
 
