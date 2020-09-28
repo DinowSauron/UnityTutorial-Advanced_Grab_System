@@ -17,4 +17,4 @@ More tutorials are coming in the future ...
 
 ## Video Tutorials:
 
-#### (#1) Picking up objetcs: [Video in Youtube](https://www.youtube.com/watch?v=MMb5BBa7Zcw&ab_channel=THERedstoneBR)
+#### (#1) Picking up objetcs: [Unity Tutorial: Pegar Objetos (Avançado) #1](https://www.youtube.com/watch?v=MMb5BBa7Zcw&ab_channel=THERedstoneBR)
