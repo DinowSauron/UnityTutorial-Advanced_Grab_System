@@ -17,4 +17,6 @@ More tutorials are coming in the future ...
 
 ## Video Tutorials:
 
-#### (#1) Picking up objetcs: [Unity Tutorial: Pegar Objetos (Avançado) #1](https://www.youtube.com/watch?v=MMb5BBa7Zcw&ab_channel=THERedstoneBR)
+#### (#1) Picking up objetcs: [Unity Tutorial: Pegar Objetos #1 (Avançado)](https://www.youtube.com/watch?v=MMb5BBa7Zcw&ab_channel=THERedstoneBR)
+#### (#2) Interactive Aim: [Unity Tutorial: Pegar Objetos #2 (Mira Interativa)](https://youtu.be/s3ZNCs75PIY)
+#### (#3) Rotate and pull: [Unity Tutorial: Pegar Objetos #3 (Rotacionar e puxar)](https://youtu.be/0kMg3Ir63UY)
